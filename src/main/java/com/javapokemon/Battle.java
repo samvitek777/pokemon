@@ -19,25 +19,28 @@ public class Battle {
 
     public void go(){
         physialMove = new PhysicalMove();
-        while (true){
+        while (true) {
             try {
-                Thread.currentThread().sleep(1000);
+                System.out.println("HP1 " + pokemonOne.getHp());
+                System.out.println("HP2 " + pokemonTwo.getHp());
                 physialMove.attack(pokemonOne, pokemonTwo);
-                if(pokemonOne.getHp() <=0){
-                    System.out.println("Покемон 2 выйграл");
-                    return;
+                if(pokemonTwo.getHp() <= 0) {
+                    System.out.println("Pokemon one win");
+                    break;
                 }
+                Thread.sleep(500);
                 physialMove.attack(pokemonTwo, pokemonOne);
-                if(pokemonOne.getHp() <=0){
-                    System.out.println("Покемон 1 выйграл");
-                    return;
+                if(pokemonOne.getHp() <= 0) {
+                    System.out.println("Pokemon two win");
+                    break;
                 }
+                Thread.sleep(500);
             } catch (Exception e){
-                System.out.println("Ошибка потока!");
+
             }
 
-
         }
+
     }
 
 }

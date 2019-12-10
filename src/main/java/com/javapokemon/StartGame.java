@@ -1,5 +1,7 @@
 package com.javapokemon;
 
+import com.javapokemon.pokemons.Charmander;
+import com.javapokemon.pokemons.Pikachu;
 import com.javapokemon.pokemons.Pokemon;
 /**
  * Старт игры
@@ -8,11 +10,10 @@ import com.javapokemon.pokemons.Pokemon;
  */
 public class StartGame {
     public static void main(String[] args) {
-        Pokemon p1 = new Pokemon("Vitka", 1);
-        Pokemon p2 = new Pokemon("Anton", 1);
-
+        Pokemon charmander = new Charmander("loh");
+        Pokemon pikachu = new Pikachu("lohtwo");
         Battle battle = new Battle();
-        battle.addPokemon(p1, p2);
+        battle.addPokemon(charmander, pikachu);
         battle.go();
     }
 }
